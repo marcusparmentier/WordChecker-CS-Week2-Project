@@ -5,13 +5,16 @@ namespace WordCounter.Models
 {
   public class WordCounterCS
   {
-    // private string _searchWord;
-    // private string _checkPhrase;
+    private string _searchWord;
+    private string _checkPhrase;
     public int wordCountTotal = 0;
 
     public string SearchCount(string searchWord, string checkPhrase)
     {
-      if (searchWord == checkPhrase)
+      _searchWord = searchWord.ToLower();
+      _checkPhrase = checkPhrase.ToLower();
+
+      if (_searchWord == _checkPhrase)
       {
         wordCountTotal += 1;
       }

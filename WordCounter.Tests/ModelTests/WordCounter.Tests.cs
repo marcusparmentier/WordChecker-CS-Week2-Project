@@ -10,14 +10,28 @@ namespace WordCounter.Tests
   {
 
     [TestMethod]
-    public void CheckStringForWords_CompareStrings_True()
+    public void SearchCount_CompareStrings_String()
     {
       //Arrange
       WordCounterCS newCount = new WordCounterCS();
+      var expected = "1";
 
       //Action
       var result = newCount.SearchCount("word", "word");
+
+      //Assert
+      Assert.AreEqual(expected, result);
+    }
+
+    [TestMethod]
+    public void SearchCountLowerCase_CompareStrings_String()
+    {
+      //Arrange
+      WordCounterCS newCount = new WordCounterCS();
       var expected = "1";
+
+      //Action
+      var result = newCount.SearchCount("Word", "worD");
 
       //Assert
       Assert.AreEqual(expected, result);
