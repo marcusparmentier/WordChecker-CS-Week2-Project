@@ -3,13 +3,13 @@ using System;
 
 namespace WordCounter.Models
 {
-  public class WordCounterCS
+  public class RepeatCounter
   {
     private string _searchWord;
     private string _checkPhrase;
     public int wordCountTotal = 0;
 
-    public string SearchCount(string searchWord, string checkPhrase)
+    public string CountRepeats(string searchWord, string checkPhrase)
     {
       _searchWord = searchWord.ToLower();
       _checkPhrase = checkPhrase;

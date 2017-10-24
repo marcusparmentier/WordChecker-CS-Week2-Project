@@ -6,73 +6,73 @@ using WordCounter.Models;
 namespace WordCounter.Tests
 {
   [TestClass]
-  public class WordCounterTest
+  public class RepeatCounterTest
   {
 
     [TestMethod]
-    public void SearchCount_CompareStrings_String()
+    public void CountRepeats_CompareStrings_String()
     {
       //Arrange
-      WordCounterCS newCount = new WordCounterCS();
+      RepeatCounter newCount = new RepeatCounter();
       var expected = "1";
 
       //Action
-      var result = newCount.SearchCount("word", "word");
+      var result = newCount.CountRepeats("word", "word");
 
       //Assert
       Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
-    public void SearchCountLowerCase_CompareStrings_String()
+    public void CountRepeatsLowerCase_CompareStrings_String()
     {
       //Arrange
-      WordCounterCS newCount = new WordCounterCS();
+      RepeatCounter newCount = new RepeatCounter();
       var expected = "1";
 
       //Action
-      var result = newCount.SearchCount("Word", "worD");
+      var result = newCount.CountRepeats("Word", "worD");
 
       //Assert
       Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
-    public void SearchCountDivide_CompareStrings_String()
+    public void CountRepeatsDivide_CompareStrings_String()
     {
       //Arrange
-      WordCounterCS newCount = new WordCounterCS();
+      RepeatCounter newCount = new RepeatCounter();
       var expected = "1";
 
       //Action
-      var result = newCount.SearchCount("wordS", "Words to check");
+      var result = newCount.CountRepeats("wordS", "Words to check");
 
       //Assert
       Assert.AreEqual(expected, result);
     }
     [TestMethod]
-    public void SearchCountDivide2_CompareStrings_String()
+    public void CountRepeatsDivide2_CompareStrings_String()
     {
       //Arrange
-      WordCounterCS newCount = new WordCounterCS();
+      RepeatCounter newCount = new RepeatCounter();
       var expected = "4";
 
       //Action
-      var result = newCount.SearchCount("Word", "word Word woRd wOrD");
+      var result = newCount.CountRepeats("Word", "word Word woRd wOrD");
 
       //Assert
       Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
-    public void SearchCountDivideSpecChars_CompareStrings_String()
+    public void CountRepeatsDivideSpecialChars_CompareStrings_String()
     {
       //Arrange
-      WordCounterCS newCount = new WordCounterCS();
+      RepeatCounter newCount = new RepeatCounter();
       var expected = "3";
 
       //Action
-      var result = newCount.SearchCount("word", "Word, words. woRd: WORDS & WORD!");
+      var result = newCount.CountRepeats("word", "Word, words. woRd: WORDS & WORD!");
 
       //Assert
       Assert.AreEqual(expected, result);
