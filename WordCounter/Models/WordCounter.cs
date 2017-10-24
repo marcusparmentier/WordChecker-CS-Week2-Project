@@ -9,14 +9,20 @@ namespace WordCounter.Models
     private string _checkPhrase;
     public int wordCountTotal = 0;
 
-    public string CountRepeats(string searchWord, string checkPhrase)
+    public RepeatCounter(string searchWord, string checkPhrase)
     {
-      _searchWord = searchWord.ToLower();
+      _searchWord = searchWord;
       _checkPhrase = checkPhrase;
+    }
+
+    public string CountRepeats()
+    {
+      _searchWord = _searchWord.ToLower();
+      _checkPhrase = _checkPhrase.ToLower();
 
       char[] dividers = { ' ', ',', '.', ':', '!', '?', '&' };
 
-      string[] dividedPhrase = checkPhrase.ToLower().Split(dividers);
+      string[] dividedPhrase = _checkPhrase.Split(dividers);
 
       for(int i = 0; i < dividedPhrase.Length; i++)
       {

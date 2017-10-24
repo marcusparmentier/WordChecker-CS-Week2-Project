@@ -13,11 +13,11 @@ namespace WordCounter.Tests
     public void CountRepeats_CompareStrings_String()
     {
       //Arrange
-      RepeatCounter newCount = new RepeatCounter();
+      RepeatCounter newCount = new RepeatCounter("word", "word");
       var expected = "1";
 
       //Action
-      var result = newCount.CountRepeats("word", "word");
+      var result = newCount.CountRepeats();
 
       //Assert
       Assert.AreEqual(expected, result);
@@ -27,11 +27,11 @@ namespace WordCounter.Tests
     public void CountRepeatsLowerCase_CompareStrings_String()
     {
       //Arrange
-      RepeatCounter newCount = new RepeatCounter();
+      RepeatCounter newCount = new RepeatCounter("Word", "worD");
       var expected = "1";
 
       //Action
-      var result = newCount.CountRepeats("Word", "worD");
+      var result = newCount.CountRepeats();
 
       //Assert
       Assert.AreEqual(expected, result);
@@ -41,11 +41,11 @@ namespace WordCounter.Tests
     public void CountRepeatsDivide_CompareStrings_String()
     {
       //Arrange
-      RepeatCounter newCount = new RepeatCounter();
+      RepeatCounter newCount = new RepeatCounter("wordS", "Words to check");
       var expected = "1";
 
       //Action
-      var result = newCount.CountRepeats("wordS", "Words to check");
+      var result = newCount.CountRepeats();
 
       //Assert
       Assert.AreEqual(expected, result);
@@ -54,11 +54,11 @@ namespace WordCounter.Tests
     public void CountRepeatsDivide2_CompareStrings_String()
     {
       //Arrange
-      RepeatCounter newCount = new RepeatCounter();
+      RepeatCounter newCount = new RepeatCounter("Word", "word Word woRd wOrD");
       var expected = "4";
 
       //Action
-      var result = newCount.CountRepeats("Word", "word Word woRd wOrD");
+      var result = newCount.CountRepeats();
 
       //Assert
       Assert.AreEqual(expected, result);
@@ -68,11 +68,11 @@ namespace WordCounter.Tests
     public void CountRepeatsDivideSpecialChars_CompareStrings_String()
     {
       //Arrange
-      RepeatCounter newCount = new RepeatCounter();
+      RepeatCounter newCount = new RepeatCounter("word", "Word, words. woRd: WORDS & WORD!");
       var expected = "3";
 
       //Action
-      var result = newCount.CountRepeats("word", "Word, words. woRd: WORDS & WORD!");
+      var result = newCount.CountRepeats();
 
       //Assert
       Assert.AreEqual(expected, result);
