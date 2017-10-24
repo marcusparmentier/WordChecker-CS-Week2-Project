@@ -14,7 +14,7 @@ A MVC app created with C Sharp and use of Razor and .NET framework focusing on c
 | **1st: Program returns word count after user enters a word. (This is the most basic example)** | User input: " 'Search word: word', 'Sentence to check in: word' " | Output: "1" |
 | **2nd: Program returns word count after user enters a phrase. (This is the most basic example that includes the previous spec's functionality and ignores capitalization in the check phrase)** | User input: " 'Search word: Word', 'Sentence to check in: worD' " | Output: "1" |
 | **3rd: Program returns word count after user enters a phrase. (This is the most basic example that includes the previous spec functionalities and has more than two words in the check phrase)** | User input: " 'Search word: wordS', 'Sentence to check in: Words to check' " | Output: "1" |
-| **4th: Program returns word count after user enters a phrase. (This is the most basic example that includes the previous spec functionalities and will check if the program is adding correctly)** | User input: " 'Search word: word', 'Sentence to check in: word word word' " | Output: "3" |
+| **4th: Program returns word count after user enters a phrase. (This is the most basic example that includes the previous spec functionalities and will check if the program is adding correctly)** | User input: " 'Search word: Word', 'Sentence to check in: word Word woRd wOrD' " | Output: "4" |
 | **5th: Program returns word count after user enters a phrase. (This is the most basic example that includes the previous spec functionalities and ignores punctuation)** | User input: " 'Search word: word', 'Sentence to check in: Word, woRd: word.' " | Output: "3" |
 
 

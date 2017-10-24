@@ -12,13 +12,19 @@ namespace WordCounter.Models
     public string SearchCount(string searchWord, string checkPhrase)
     {
       _searchWord = searchWord.ToLower();
-      _checkPhrase = checkPhrase.ToLower();
+      _checkPhrase = checkPhrase;
 
-      if (_searchWord == _checkPhrase)
+      char[] dividers = { ' ' };
+
+      string[] dividedPhrase = checkPhrase.ToLower().Split(dividers);
+
+      for(int i = 0; i < dividedPhrase.Length; i++)
       {
-        wordCountTotal += 1;
+        if (_searchWord == dividedPhrase[i])
+        {
+          wordCountTotal += 1;
+        }
       }
-
       return wordCountTotal.ToString();
     }
   }
