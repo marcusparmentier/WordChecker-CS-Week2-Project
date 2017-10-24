@@ -14,7 +14,7 @@ namespace WordCounter.Models
       _searchWord = searchWord.ToLower();
       _checkPhrase = checkPhrase;
 
-      char[] dividers = { ' ' };
+      char[] dividers = { ' ', ',', '.', ':', '!', '?', '&' };
 
       string[] dividedPhrase = checkPhrase.ToLower().Split(dividers);
 

@@ -63,5 +63,19 @@ namespace WordCounter.Tests
       //Assert
       Assert.AreEqual(expected, result);
     }
+
+    [TestMethod]
+    public void SearchCountDivideSpecChars_CompareStrings_String()
+    {
+      //Arrange
+      WordCounterCS newCount = new WordCounterCS();
+      var expected = "3";
+
+      //Action
+      var result = newCount.SearchCount("word", "Word, words. woRd: WORDS & WORD!");
+
+      //Assert
+      Assert.AreEqual(expected, result);
+    }
   }
 }
